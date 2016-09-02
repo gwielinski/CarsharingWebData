@@ -1,7 +1,13 @@
-datetimeValorisation <- function(df){
+datetimeValorisation <- function(df, transformTimestamp = TRUE){
+
+  if(transformTimestamp == TRUE){
   # Convert timestamp as a POSxilt date format
   df$datetime <- as.POSIXct(strptime(substr(df$timestamp,1,19), tz = Sys.timezone(location = TRUE), "%Y-%m-%d %H:%M:%S"))
   df$timestamp <- NULL   # Remove timestamp variable
+  } else {
+    df$datetime <- df$timestamp
+    df$timestamp <- NULL   # Remove timestamp variable
+  }
 
   # Create new key figures based on the new datetime variable
   df <- df %>%
@@ -18,3 +24,4 @@ datetimeValorisation <- function(df){
     )
   return(df)
 }
+
