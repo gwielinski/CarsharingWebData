@@ -1,3 +1,10 @@
+#' datetimeValorisation
+#'
+#' Function to add key figures generated from a date/time field
+#' @param df data frame containig the date/time field to be improve
+#' @param transormTimestamp boolean value; TRUE if the timestamp field is in character format and need to be transformed
+#' @examples df <- datetimeValorisation(df, TRUE)
+
 datetimeValorisation <- function(df, transformTimestamp = TRUE){
 
   if(transformTimestamp == TRUE){
@@ -24,4 +31,3 @@ datetimeValorisation <- function(df, transformTimestamp = TRUE){
     )
   return(df)
 }
-
