@@ -22,6 +22,7 @@ datetimeValorisation <- function(df, transformTimestamp = TRUE){
            month = month(datetime),
            day = day(datetime),
            week = week(datetime),
+           wday = wday(datetime),
            hour = hour(datetime),
            minute = minute(datetime),
            ym = ISOdate(year, month, 1),
