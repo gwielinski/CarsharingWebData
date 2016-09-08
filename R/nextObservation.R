@@ -9,8 +9,8 @@ nextObservation <- function(df, addfeatures = TRUE){
     # Rajouter des key figures à la table provenant des id liés à la next obs
     df <- df %>%
           left_join(df %>%
-                    select(id, lat, lon, energy_level, ymdhm, year, month, day, wday) %>%
-                    rename(nextlat = lat, nextlon = lon, nextenergy_level = energy_level, nextymdhm = ymdhm, nextyear = year, nextmonth = month, nextday = day, nextwday = wday),
+                    select(id, lat, lon, energy_level, ymdhm, year, month, day, wday, hour) %>%
+                    rename(nextlat = lat, nextlon = lon, nextenergy_level = energy_level, nextymdhm = ymdhm, nextyear = year, nextmonth = month, nextday = day, nextwday = wday, nexthour = hour),
                     by = c("nextobs" = "id")) %>%
           mutate(timediff = nextymdhm - ymdhm, energydiff = nextenergy_level - energy_level) %>% ungroup()
   }
