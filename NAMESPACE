@@ -2,6 +2,7 @@
 
 export(datetimeValorisation)
 export(rmDuplicated)
+export(rmDuplicatedDT)
 export(nextObservation)
 export(createObservationsDf)
 export(createODDf)
