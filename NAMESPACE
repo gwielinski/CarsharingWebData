@@ -2,10 +2,10 @@
 
 export(datetimeValorisation)
 export(rmDuplicated)
-export(rmDuplicatedDT)
 export(nextObservation)
 export(createObservationsDf)
 export(createODDf)
 export(flagDowntimes)
 export(intervalInSequence)
 export(plotSuccObs)
+export(rmDuplicatedDT)
