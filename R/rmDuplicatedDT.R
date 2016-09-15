@@ -1,5 +1,5 @@
 rmDuplicatedDT <- function(df, groupingVariables){
 
-  return(dsubset(unique(setkeyv(data.table(df), c('vin','ymdhm')))))
+  return(subset(unique(setkeyv(data.table(df), c('vin','ymdhm')))))
 
 }
